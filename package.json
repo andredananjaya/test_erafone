@@ -1,0 +1,28 @@
+{
+  "name": "test_erafone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+   "scripts": {
+    "test:web": "npx playwright test --grep @web --project=chromium"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andredananjaya/test_erafone.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/andredananjaya/test_erafone/issues"
+  },
+  "homepage": "https://github.com/andredananjaya/test_erafone#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.1"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}
