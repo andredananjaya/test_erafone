@@ -39,7 +39,7 @@ WEB_URL=https://katalon-demo-cura.herokuapp.com/
   ```
 - **Run all tests:**
   ```bash
-  npx playwright test
+  npx playwright test --project=chromium 
   ```
 - **View test report:**
   ```bash

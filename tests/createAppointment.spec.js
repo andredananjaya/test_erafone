@@ -14,7 +14,7 @@ test.beforeEach(async ({ page }, testInfo) => {
   curaHealth = new CuraHealth(page);
 });
 
-test("Verify user cannot make appointment without visit date (tags: @appointment @verify_visit_date_required)", async ( ) => {
+test("Make Appointment - without input visit date (tags: @appointment @verify_visit_date_required)", async ( ) => {
   await curaHealth.gotoURL();
   await curaHealth.clickMakeAppointment();
   await curaHealth.inputUsername(userLoginData.username);
@@ -24,7 +24,7 @@ test("Verify user cannot make appointment without visit date (tags: @appointment
   await curaHealth.verifyVisitDateRequired();
 });
 
-test("Verify user can make appointment (tags: @appointment @make_appointment)", async ( ) => {
+test("Make Appointment - Success (tags: @appointment @make_appointment)", async ( ) => {
   await curaHealth.gotoURL();
   await curaHealth.clickMakeAppointment();
   await curaHealth.inputUsername(userLoginData.username);

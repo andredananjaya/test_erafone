@@ -1,6 +1,6 @@
 import { expect } from '@playwright/test';
 import { selectDateMoreThanToday, generateRandomComment } from '../helper/randomizer.js';
-require('dotenv').config();
+
 
 export class CuraHealth {
   constructor(page) {
@@ -113,10 +113,18 @@ export class CuraHealth {
         .evaluate((el) => el.validationMessage);
 
     expect(validationMessage)
-        .toContain('fill out this field');
+        .toContain('Please fill out this field');
     }
 
-    async verifyAppointmentSuccess(facilityList, healthProgram, visitDate, comment){
+    async verifyLoginFailed(){
+      await expect(this.page.locator(this.errorMessage)).toHaveText("Login failed! Please ensure the username and password are valid.");
+    }
+
+    async verifyLoginSuccess(){
+      await expect(this.page.locator(this.btnAppointment)).toBeVisible();
+    }
+
+    async verifyAppointmentSuccess(facilityList, healthProgram, visitDate){
       await expect(this.page.locator(this.confirmFacility)).toHaveText(facilityList);
       await expect(this.page.locator(this.confirmHospitalReadmission)).toHaveText("Yes");
       await expect(this.page.locator(this.confirmHealthCareProgram)).toHaveText(healthProgram);
