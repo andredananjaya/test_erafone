@@ -10,7 +10,7 @@ Before you begin, make sure you have the following installed:
 ### Installation
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/andredananjaya/test_erafone.git
+   git clone https://github.com/andredananjaya/test_erafone_website.git
    cd test_erafone
    ```
 
