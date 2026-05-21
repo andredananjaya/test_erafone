@@ -36,9 +36,15 @@ npx playwright test
 Untuk melihat laporan hasil test:
 
 npx playwright show-report
+
 Struktur Project
+
 tests/: Berisi file-file test scenario (contoh: createAppointment.spec.js).
+
 page-object/: Implementasi Page Object Model (POM). File pageobject.js berisi locator dan method yang digunakan dalam test.
+
 helper/: Berisi data helper seperti data user untuk login (datauser.js).
+
 Dashboard/: Berisi page object spesifik untuk halaman Dashboard (jika ada).
+
 playwright.config.js: Konfigurasi utama untuk Playwright.
