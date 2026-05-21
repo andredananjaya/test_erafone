@@ -1,32 +1,53 @@
-# 🚀 Cura Health Automation Testing Framework (Playwright)
-Framework end-to-end testing yang andal untuk aplikasi web Cura Health, dibangun menggunakan Playwright dengan implementasi best practice modern.
+# Cura Health Automation Testing
 
-## 📋 Prasyarat
-Pastikan Anda telah menginstal dependensi dasar sebelum memulai:
-- Node.js (v14 atau versi yang lebih baru)
-- NPM (terinstal otomatis bersama Node.js)
+This is an automation testing framework for the Cura Health website, built using Playwright.
 
-## ⚙️ Instalasi
-Ikuti langkah-langkah berikut untuk menyiapkan project di lingkungan lokal Anda:
+### Prerequisites
+Before you begin, make sure you have the following installed:
+- Node.js (v14 or later)
+- NPM
 
-1. **Clone repository**
+### Installation
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/andredananjaya/test_erafone.git
    cd test_erafone
    ```
 
-2. **Instal semua dependensi project**
+2. **Install dependencies:**
    ```bash
    npm install
    npm i dotenv
    ```
 
-3. **Instal browser yang didukung Playwright**
+3. **Install Playwright browsers:**
    ```bash
    npx playwright install
    ```
 
-## 🔧 Konfigurasi Lingkungan
-Buat file `.env` di direktori root project untuk menyimpan variabel lingkungan. Salin konfigurasi contoh di bawah ini, dan sesuaikan nilainya sesuai lingkungan Anda:
+### Environment Setup
+Create a `.env` file in the root directory and add the following configuration:
+```env
+WEB_URL=https://katalon-demo-cura.herokuapp.com/
+```
+> **Note:** This project uses `dotenv` to manage environment variables. Ensure the `.env` file exists before running tests. Don't forget to add `.env` to your `.gitignore` to keep sensitive data safe.
 
-> ⚠️ **Penting**: Isi di bawah ini hanya contoh. Jangan pernah menyimpan kredensial asli (username, password, API key) di repositori. Selalu tambahkan file `.env` ke `.gitignore` untuk melindungi data sensitif Anda.
+### How to Run Tests
+- **Run tests with the @login tag (Chromium only):**
+  ```bash
+  npx playwright test --grep @login --project=chromium
+  ```
+- **Run all tests:**
+  ```bash
+  npx playwright test
+  ```
+- **View test report:**
+  ```bash
+  npx playwright show-report
+  ```
+
+### Project Structure
+- **tests/**: Contains test scenario files (e.g., [createAppointment.spec.js](file:///Users/andredananjaya/git/erafone/test_erafone/tests/createAppointment.spec.js)).
+- **page-object/**: Contains [pageobject.js](file:///Users/andredananjaya/git/erafone/test_erafone/page-object/pageobject.js) for locators and methods (Page Object Model).
+- **helper/**: Contains user data ([datauser.js](file:///Users/andredananjaya/git/erafone/test_erafone/helper/datauser.js)) and randomizer utilities.
+- **playwright.config.js**: Main Playwright configuration file.
