@@ -1,50 +1,32 @@
-Project ini adalah framework automation testing untuk Cura Health menggunakan Playwright.
+# 🚀 Cura Health Automation Testing Framework (Playwright)
+Framework end-to-end testing yang andal untuk aplikasi web Cura Health, dibangun menggunakan Playwright dengan implementasi best practice modern.
 
-Prasyarat
-Pastikan Anda telah menginstal:
+## 📋 Prasyarat
+Pastikan Anda telah menginstal dependensi dasar sebelum memulai:
+- Node.js (v14 atau versi yang lebih baru)
+- NPM (terinstal otomatis bersama Node.js)
 
-Node.js (versi 14 atau lebih baru)
-NPM (biasanya terinstal otomatis dengan Node.js)
-Instalasi
-Clone repository ini:
+## ⚙️ Instalasi
+Ikuti langkah-langkah berikut untuk menyiapkan project di lingkungan lokal Anda:
 
-git clone https://github.com/andredananjaya/test_erafone.git
-cd test_erafone
-Install dependencies:
+1. **Clone repository**
+   ```bash
+   git clone https://github.com/andredananjaya/test_erafone.git
+   cd test_erafone
+   ```
 
-npm install
-npm i dotenv
-Install browser Playwright:
+2. **Instal semua dependensi project**
+   ```bash
+   npm install
+   npm i dotenv
+   ```
 
-npx playwright install
-Konfigurasi
-Buat file .env di root directory project dan tambahkan konfigurasi berikut:
+3. **Instal browser yang didukung Playwright**
+   ```bash
+   npx playwright install
+   ```
 
-Catatan: Isi .env di bawah ini hanya contoh.
-Jangan pernah menyimpan kredensial asli Anda — simpan file .env yang sebenarnya secara pribadi dan tambahkan ke `.gitignore**.
+## 🔧 Konfigurasi Lingkungan
+Buat file `.env` di direktori root project untuk menyimpan variabel lingkungan. Salin konfigurasi contoh di bawah ini, dan sesuaikan nilainya sesuai lingkungan Anda:
 
-WEB_URL=https://katalon-demo-cura.herokuapp.com/
-Catatan: Project ini menggunakan dotenv untuk mengelola environment variables. Pastikan file .env sudah dibuat sebelum menjalankan test.
-
-Menjalankan Test
-Untuk menjalankan test scenario (khususnya yang memiliki tag @login/@appointment):
-
-npx playwright test --grep @login --project=chromium
-Atau menjalankan semua test menggunakan command Playwright langsung:
-
-npx playwright test
-Untuk melihat laporan hasil test:
-
-npx playwright show-report
-
-Struktur Project
-
-tests/: Berisi file-file test scenario (contoh: createAppointment.spec.js).
-
-page-object/: Implementasi Page Object Model (POM). File pageobject.js berisi locator dan method yang digunakan dalam test.
-
-helper/: Berisi data helper seperti data user untuk login (datauser.js).
-
-Dashboard/: Berisi page object spesifik untuk halaman Dashboard (jika ada).
-
-playwright.config.js: Konfigurasi utama untuk Playwright.
+> ⚠️ **Penting**: Isi di bawah ini hanya contoh. Jangan pernah menyimpan kredensial asli (username, password, API key) di repositori. Selalu tambahkan file `.env` ke `.gitignore` untuk melindungi data sensitif Anda.
